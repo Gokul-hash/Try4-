@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Special Surprise</title>
+    <style>
+        body {
+            background: linear-gradient(to bottom, #ffe4e1, #ffccff);
+            text-align: center;
+            font-family: 'Comic Sans MS', cursive;
+            overflow: hidden;
+        }
+        .teddy-container {
+            position: relative;
+            margin-top: 50px;
+        }
+        .teddy {
+            width: 200px;
+            cursor: pointer;
+            transition: transform 0.2s;
+        }
+        .teddy:hover {
+            transform: scale(1.1);
+        }
+        .message-box {
+            display: none;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px pink;
+            margin: 20px auto;
+            max-width: 300px;
+            font-size: 18px;
+            color: #ff1493;
+        }
+        .love-text {
+            display: none;
+            font-size: 40px;
+            font-weight: bold;
+            color: #ff69b4;
+            position: absolute;
+            top: 40%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            animation: fadeIn 2s ease-in-out;
+        }
+        @keyframes fadeIn {
+            0% { opacity: 0; }
+            100% { opacity: 1; }
+        }
+    </style>
+</head>
+<body>
+
+    <h1 style="color: #ff1493;">Hey Love, I have a surprise for you! 🎁</h1>
+
+    <div class="teddy-container">
+        <img src="https://i.imgur.com/kZb6pYu.png" alt="Cute Teddy Bear" class="teddy" onclick="openGift()">
+        <p style="font-size: 20px; color: #ff69b4;">Tickle me to open your gift!</p>
+    </div>
+
+    <div class="message-box" id="messageBox">
+        💌 **A Love Letter for You** 💌<br><br>
+        **In the sky of dreams, you shine so bright,**<br>
+        **A little moon in my endless night.**<br>
+        **Your laugh? Like stars that twinkle above,**<br>
+        **Your eyes? A universe filled with love.**<br><br>
+        
+        **If warmth had a name, it’d be you,**<br>
+        **Like sunshine melting morning dew.**<br>
+        **If home had a sound, it’s your voice,**<br>
+        **Turning silence into melody, making my heart rejoice.**<br><br>
+
+        **So here’s my gift, wrapped in this rhyme,**<br>
+        **A promise to love you beyond all time.**<br>
+        **Close your eyes, make a wish so true,**<br>
+        **Because, my love, every wish I make is you.** ❤️
+    </div>
+
+    <div class="love-text" id="loveText">LOVE YOU! ❤️</div>
+
+    <script>
+        function openGift() {
+            let teddy = document.querySelector(".teddy");
+            let messageBox = document.getElementById("messageBox");
+            let loveText = document.getElementById("loveText");
+
+            teddy.src = "https://i.imgur.com/4EZvMKT.png"; // Opened gift box teddy image
+            messageBox.style.display = "block";
+
+            setTimeout(() => {
+                loveText.style.display = "block";
+            }, 2000);
+        }
+    </script>
+
+</body>
+</html>
